@@ -40,7 +40,6 @@ const DropZone = props => {
 
   return (
     <div className="container mt-3">
-      {console.log(getRootProps({ isDragActive, isDragAccept, isDragReject }))}
       <Container {...getRootProps({ isDragActive, isDragAccept, isDragReject })}>
         <input {...getInputProps()} />
         <p>Drag 'n' drop CSE Detection XML</p>
