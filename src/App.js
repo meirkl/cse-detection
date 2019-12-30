@@ -1,6 +1,19 @@
 import React, { useState, useCallback } from 'react';
 import { parseString } from 'xml2js';
 import DropZone from './DropZone';
+import styled from 'styled-components';
+import { ReactComponent as TrashIcon } from './media/trash.svg';
+
+const Table = styled.table`
+  thead {
+    background-color: #0071c5;
+    color: #fff;
+  }
+`;
+
+const Trash = styled(TrashIcon)`
+  width: 24px;
+`;
 
 const App = () => {
   const [fileName, setFileName] = useState('');
@@ -60,10 +73,10 @@ const App = () => {
                 className="btn btn-warning align-self-end ml-2"
                 onClick={reset}
               >
-                <span className="font-weight-bold">&#8635;</span>
+                <Trash />
               </button>
             </div>
-            <table className="mt-3 table table-bordered">
+            <Table className="mt-3 table table-bordered">
               <caption>CSME Version Detection xml data</caption>
               <thead>
                 <tr>
@@ -87,7 +100,7 @@ const App = () => {
                   <td>{displayContent(xmlJson.System_Status)}</td>
                 </tr>
               </tbody>
-            </table>
+            </Table>
           </>
         )}
       </div>
