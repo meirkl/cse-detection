@@ -49,19 +49,22 @@ const App = () => {
 
   return (
     <div className="container-fluid">
-      <h1 className="mt-3">CSE Detection</h1>
+      <h1 className="mt-3">CSME Version Detection</h1>
       <DropZone onDrop={onDrop} />
       <div>
         {xmlJson && (
           <>
             <div className="d-flex mt-3">
               <h3>{fileName}</h3>
-              <button className="btn btn-warning align-self-end ml-2" onClick={reset}>
+              <button
+                className="btn btn-warning align-self-end ml-2"
+                onClick={reset}
+              >
                 <span className="font-weight-bold">&#8635;</span>
               </button>
             </div>
             <table className="mt-3 table table-bordered">
-              <caption>CSE Detection xml data</caption>
+              <caption>CSME Version Detection xml data</caption>
               <thead>
                 <tr>
                   <th>Application_Name</th>

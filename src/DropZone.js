@@ -32,7 +32,13 @@ const Container = styled.div`
 `;
 
 const DropZone = props => {
-  const { getRootProps, getInputProps, isDragActive, isDragAccept, isDragReject } = useDropzone({
+  const {
+    getRootProps,
+    getInputProps,
+    isDragActive,
+    isDragAccept,
+    isDragReject
+  } = useDropzone({
     accept: ['application/xml', 'text/xml'],
     multiple: false,
     onDrop: props.onDrop
@@ -40,9 +46,11 @@ const DropZone = props => {
 
   return (
     <div className="container mt-3">
-      <Container {...getRootProps({ isDragActive, isDragAccept, isDragReject })}>
+      <Container
+        {...getRootProps({ isDragActive, isDragAccept, isDragReject })}
+      >
         <input {...getInputProps()} />
-        <p>Drag 'n' drop CSE Detection XML</p>
+        <p>Drag 'n' drop CSME Version Detection XML</p>
       </Container>
     </div>
   );
